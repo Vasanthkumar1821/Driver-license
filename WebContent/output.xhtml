@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<!-- <h:outputStylesheet library="css" name="style.css" /> -->
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<title>Driving License Driver Details</title>
+	<style>
+.box {
+	background-color: #fff;
+	width: 800px;
+	border: 1px solid #fff;
+	padding: 20px;
+	margin-left: 300px;
+}
+</style>
+</h:head>
+<h:body>
+	<ui:include src="header.xhtml" />
+	<ui:include src="menu.xhtml" />
+	<br />
+	<br />
+	<br />
+
+	<div class="box">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Driver Eligibility Test Results</div>
+			<div class="panel-body">
+
+
+
+				<c:if test="#{driverData.eligibility == 'true'}">
+					<div class="panel panel-success">
+						<div class="panel-heading">Age Eligibility</div>
+						<div class="panel-body">
+
+							The Driver is eligible for the
+							<h:outputText value="#{driverData.licenseCategory}" />
+							License Category.<br />
+
+						</div>
+					</div>
+				</c:if>
+
+				<c:if test="#{driverData.eligibility == 'false'}">
+					<div class="panel panel-danger">
+						<div class="panel-heading">Age Eligibility</div>
+						<div class="panel-body">
+
+							The driver is not eligible for the license.<br />
+
+						</div>
+					</div>
+				</c:if>
+
+
+				<c:if test="#{driverData.driverTestEligibility == 'true'}">
+					<div class="panel panel-success">
+						<div class="panel-heading">Driving Test Eligibility</div>
+						<div class="panel-body">
+
+							The driver is eligible for the Driving Test. <br />
+
+						</div>
+					</div>
+				</c:if>
+
+				<c:if test="#{driverData.driverTestEligibility == 'false'}">
+					<div class="panel panel-danger">
+						<div class="panel-heading">Driving Test Eligibility</div>
+						<div class="panel-body">
+
+							The driver is not eligible for the Driving Test. <br />
+
+						</div>
+					</div>
+				</c:if>
+
+
+
+				<c:if test="#{driverData.driverLocationEligibility == 'true'}">
+					<div class="panel panel-success">
+						<div class="panel-heading">Location Eligibility</div>
+						<div class="panel-body">
+
+							The Driver Location is within 25 miles from the DMV office
+							Location.<br />
+
+						</div>
+					</div>
+				</c:if>
+
+				<c:if test="#{driverData.driverLocationEligibility == 'false'}">
+					<div class="panel panel-danger">
+						<div class="panel-heading">Location Eligibility</div>
+						<div class="panel-body">
+
+							The Driver location is more than 25 miles from the DMV office
+							Location.<br />
+
+						</div>
+					</div>
+				</c:if>
+
+
+				<c:if
+					test="#{driverData.familyBackgroundCheckEligibility == 'true'}">
+					<div class="panel panel-success">
+						<div class="panel-heading">Family Background Verification</div>
+						<div class="panel-body">
+								Background Verification is success, The driver is eligible.
+							<br />
+
+						</div>
+					</div>
+				</c:if>
+
+				<c:if
+					test="#{driverData.familyBackgroundCheckEligibility == 'false'}">
+					<div class="panel panel-danger">
+						<div class="panel-heading">Family Background verification</div>
+						<div class="panel-body">
+
+							Background Verification failed, The Driver is not eligible.<br />
+
+						</div>
+					</div>
+				</c:if>
+
+
+
+			</div>
+		</div>
+	</div>
+	<ui:include src="footer.xhtml" />
+</h:body>
+</html>

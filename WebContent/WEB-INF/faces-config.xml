@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
+	version="2.3">
+
+	<!-- Eligibility Navigation rule -->
+	<navigation-rule>
+		<from-view-id>eligibility.xhtml</from-view-id>
+		<navigation-case>
+			<!-- <from-action>#{driverData.checkEligibility}</from-action> -->
+			<from-outcome>CheckEligibility</from-outcome>
+			<to-view-id>output.xhtml</to-view-id>
+		</navigation-case>
+
+
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>eligibility.xhtml</from-view-id>
+		<navigation-case>
+			<!-- <from-action>#{driverData.checkEligibility}</from-action> -->
+			<from-outcome>EmailError</from-outcome>
+			<to-view-id>eligibility.xhtml</to-view-id>
+		</navigation-case>
+
+
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>index.xhtml</from-view-id>
+		<navigation-case>
+			<!-- <from-action>#{driverData.checkEligibility}</from-action> -->
+			<from-outcome>save</from-outcome>
+			<to-view-id>home.xhtml</to-view-id>
+		</navigation-case>
+
+	</navigation-rule>
+
+</faces-config>

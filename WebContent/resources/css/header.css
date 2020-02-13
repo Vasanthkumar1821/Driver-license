@@ -1,0 +1,10 @@
+@charset "ISO-8859-1";
+.header {
+	background: #23384e;
+	padding: 7px 0
+}
+
+.header h1 {
+	color: #d8d9ed;
+	text-align: left;
+}
