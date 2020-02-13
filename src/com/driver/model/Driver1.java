@@ -12,8 +12,6 @@ import javax.faces.bean.SessionScoped;
 import com.avps.model.Driver;
 import com.driver.JDBCConnection.JDBCConnector;
 
-// this is a pojo class
-
 @ManagedBean(name = "driverData")
 @SessionScoped
 public class Driver1 {
