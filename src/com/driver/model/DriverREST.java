@@ -15,15 +15,17 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
+// This class handles all the REST calls
 public class DriverREST {
 
+	// REST Service method
 	public Driver restServiceMethod(Driver driver) throws Exception {
 
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 		HttpClient httpclient = HttpClientBuilder.create().build();
 		HttpPost post = new HttpPost(
-				"http://localhost:9090/DecisionService/rest/v1/LicenseEligibilityRulesApp/DriverDeployment/1.8");
+				"http://localhost:9090/DecisionService/rest/v1/LicenseEligibilityRulesApp/DriverDeployment");
 		JSONObject driverjson = new JSONObject(driver);
 
 		JSONObject jsonRequest = new JSONObject();

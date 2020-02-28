@@ -76,8 +76,8 @@
 						<p:selectOneRadio id="console"
 							value="#{driverData.revocationCheck}" required="true"
 							label="Action">
-							<f:selectItem itemLabel="Yes" itemValue="yes" />
-							<f:selectItem itemLabel="No" itemValue="no" />
+							<f:selectItem itemLabel="Yes" itemValue="true" />
+							<f:selectItem itemLabel="No" itemValue="false" />
 							<p:ajax process="console" update="@form" />
 						</p:selectOneRadio>
 					</div>
@@ -85,13 +85,13 @@
 
 				<div class="form-group">
 					<h:outputLabel value="When"
-						rendered="#{driverData.revocationCheck eq 'yes'}"
+						rendered="#{driverData.revocationCheck eq 'true'}"
 						styleClass="control-label col-sm-2" />
 					<div class="col-sm-10">
 
 
 						<p:calendar value="#{driverData.licenseRevokedDate}"
-							rendered="#{driverData.revocationCheck eq 'yes'}" mode="popup" />
+							rendered="#{driverData.revocationCheck eq 'true'}" mode="popup" />
 					</div>
 				</div>
 

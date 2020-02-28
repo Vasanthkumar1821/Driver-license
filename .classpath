@@ -15,7 +15,7 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/primefaces-7.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/HVasanth/Desktop/Driver.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="WebContent/resources/lib/Driver.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

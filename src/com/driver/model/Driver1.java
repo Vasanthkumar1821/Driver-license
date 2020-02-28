@@ -49,13 +49,13 @@ public class Driver1 {
 	// license revoked date of a family member
 	private Date licenseRevokedDate;
 
-	private String revocationCheck;
+	private boolean revocationCheck;
 
-	public String getRevocationCheck() {
+	public boolean isRevocationCheck() {
 		return revocationCheck;
 	}
 
-	public void setRevocationCheck(String revocationCheck) {
+	public void setRevocationCheck(boolean revocationCheck) {
 		this.revocationCheck = revocationCheck;
 	}
 
@@ -225,7 +225,7 @@ public class Driver1 {
 		ResultSet rs = ps.executeQuery();
 		while (rs.next()) {
 			ee = rs.getString("driveremail");
-		//	da = rs.getDate("lastdrivingtestdate");
+			// da = rs.getDate("lastdrivingtestdate");
 
 			d.setAge(rs.getInt("driverage"));
 			d.setState(rs.getString("driverstate"));
@@ -243,7 +243,8 @@ public class Driver1 {
 
 			d.setFamilyMembersCount(familyMembersCount);
 			d.setRevocationCheck(revocationCheck);
-			if (revocationCheck.equals("yes")) {
+			System.out.println("check=====" + revocationCheck);
+			if (revocationCheck == true) {
 				d.setLicenseRevokedDate(Driver1.convertToDateViaSqlDate(licenseRevokedDate));
 			} else {
 				d.setLicenseRevokedDate(null);
@@ -268,7 +269,7 @@ public class Driver1 {
 
 	public static Date convertToDateViaSqlDate(Date dateToConvert) {
 		dateToConvert = new java.sql.Date(dateToConvert.getTime());
-		System.out.println("sql date convertor===" + dateToConvert);
+		//System.out.println("sql date convertor===" + dateToConvert);
 		return dateToConvert;
 	}
 
